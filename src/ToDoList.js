@@ -56,6 +56,7 @@ function TodoList() {
             <label className="type" htmlFor="personal">
               personal
               <input
+                className="personal"
                 type="radio"
                 name="todo-type"
                 value="personal"
@@ -104,7 +105,7 @@ function TodoList() {
                   }}
                 />
               ) : (
-                todo.content
+                <div className="todo_content"> {todo.content}</div>
               )}
               <button className="edit" onClick={() => editTodo(index)}>
                 Edit

@@ -239,10 +239,7 @@ input:checked ~ .bubble::after {
 	background-color: var(--danger);
 }
 
-.todo-item.done .todo-content input {
-	text-decoration: line-through;
-	color: var(--grey);
-}
+
 
 button[type='submit'] {
 	background-color: var(--business);
@@ -280,6 +277,7 @@ button[type='submit'] {
 	transition: 0.2s ease-in-out;
 	margin-left: auto;
 	margin-right: 1rem;
+	width: 60px;
 }
 section {
   padding: 2.1rem;
@@ -382,4 +380,93 @@ input[type="checkbox"] {
 .user {
 	background-color: var(--grey);
 	width: auto;
+}
+
+
+input[type='radio'] {
+  position: relative;
+  height: 22px;
+  width: 22px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+input[type='radio']::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 2px solid dodgerblue;
+}
+
+input[type='radio']:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: dodgerblue;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+}
+
+
+input[type='radio']#personal:checked::after {
+	background-color: var(--primary);
+}
+input[type='radio']#personal:checked::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	border: 2px solid var(--primary);
+}
+
+input[type='radio']#personal::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	border: 2px solid var(--primary);
+}
+
+/*зачеркивание*/
+.todo_content.bubble::after input {
+	text-decoration: line-through;
+}
+
+input.todo-item.done.todo-content  {
+	text-decoration: line-through;
+}
+
+.bubble.personal::after .todo-content li{
+	text-decoration: line-through;
+}
+input::after {
+	.todo-content {
+		text-decoration: line-through;
+	}
+}
+
+li.done .todo_content {
+  text-decoration: line-through;
 }
