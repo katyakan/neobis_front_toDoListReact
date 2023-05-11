@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
+  const [editingIndex, setEditingIndex] = useState(-1);
 
   function addTodo(todo) {
     setTodos([...todos, todo]);
@@ -12,7 +13,15 @@ function TodoList() {
     newTodos.splice(index, 1);
     setTodos(newTodos);
   }
-  function editTodo(index) {}
+  function editTodo(index) {
+    setEditingIndex(index);
+  }
+
+  function saveTodoEdit(index, content) {
+    const newTodos = [...todos];
+    newTodos[index].content = content;
+    setTodos(newTodos);
+  }
 
   return (
     <div>
@@ -83,8 +92,20 @@ function TodoList() {
                 <span className={`bubble ${todo.category}`}></span>
               </label>
 
-              {todo.content}
-
+              {editingIndex === index ? (
+                <input
+                  type="text"
+                  value={todo.content}
+                  onChange={(e) => {
+                    saveTodoEdit(index, e.target.value);
+                  }}
+                  onBlur={() => {
+                    setEditingIndex(-1);
+                  }}
+                />
+              ) : (
+                todo.content
+              )}
               <button className="edit" onClick={() => editTodo(index)}>
                 Edit
               </button>
