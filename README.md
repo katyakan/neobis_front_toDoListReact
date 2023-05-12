@@ -4,7 +4,7 @@
 
 
 ### DEMO :arrow_heading_down::
- [Click me!]( https://neobis-front-to-do-list-react-oubmtgkav-katyakan.vercel.app/)
+ [Click me!]( https://neobis-front-to-do-list-react.vercel.app/)
 
 
 [<img  height="300em" src="https://user-images.githubusercontent.com/106536102/236781281-031eeb21-f834-4287-b1bb-d7cbc26af78c.png" />][site]
@@ -21,4 +21,4 @@
  
  
  
- [site]:  https://neobis-front-to-do-list-react-oubmtgkav-katyakan.vercel.app/
+ [site]:  https://neobis-front-to-do-list-react.vercel.app/
