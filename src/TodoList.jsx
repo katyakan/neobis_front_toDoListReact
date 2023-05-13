@@ -105,7 +105,13 @@ function TodoList() {
                   }}
                 />
               ) : (
-                <div className="todo_content"> {todo.content}</div>
+                <div
+                  className="todo_content"
+                  style={{ textDecoration: todo.done ? 'line-through' : '' }}
+                >
+                  {' '}
+                  {todo.content}
+                </div>
               )}
               <button className="edit" onClick={() => editTodo(index)}>
                 Edit
